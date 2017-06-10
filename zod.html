@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<link href="zod.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Zodiac Finder</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script src="jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#btn1").click(function(){
+				var status=true;
+				if($("#nam").val()=="")
+					{
+
+					  $('#unagiName').fadeIn();
+							status=false;
+					}
+					else $('#unagiName').hide();
+					if($("#choice").val()==0)
+					{
+
+					  $('#unagiDay').fadeIn();
+					 	status=false;
+					}
+						else $('#unagiDay').hide();
+					 if($("#choice1").val()==0)
+					{
+
+					  $('#unagiMonth').fadeIn();
+					 	status=false;
+					}
+						else $('#unagiMonth').hide();
+
+				if(status==true){
+					$("#before").slideUp(1000);
+					$("#before").promise().done(function(){
+						$("#after").slideDown(1000);
+				});
+				}
+			});
+
+
+			$("#btn2").click(function(){
+					$("#nam").val("");
+					$("#choice").val("0");
+					$("#choice1").val("0");
+					$("#after").slideUp(1000);
+					$("#after").promise().done(function(){
+					$("#before").slideDown(1000);
+				});
+			});
+		});
+
+		$(function() {
+			$(document).on('click', '.alert-close', function() {
+			$(this).parent().hide();
+			});
+		});
+
+	</script>
+	<script>
+		function foo()
+		{
+			data=choice.value;
+			data2=choice1.value;
+			data3=nam.value;
+
+
+			if((data<=19&&data2==1)||(data>=22&&data2==12))
+			{
+				hi.innerHTML="Hi! " + data3 + " You are Capricorn";
+				image1.src="capricorn.jpeg";
+				des.innerHTML="<b>CAPRICORN TRAITS</b> <br/> <b>Strengths:</b> Responsible, disciplined, self-control, good managers <br/><b>Weaknesses:</b> Know-it-all, unforgiving, condescending, expecting the worst <br/><b>Capricorn likes:</b> Family, tradition, music, understated status, quality craftsmanship <br/><b>Capricorn dislikes:</b> Almost everything at some point";
+
+			}
+				else if((data>=21&&data2==3)||(data<=19&&data2==4))
+			{
+				hi.innerHTML="Hi! " + data3 + " You are Aries";
+				image1.src="aries.jpeg";
+				des.innerHTML="<b>ARIES TRAITS</b> <br/><b>Strengths:</b> Courageous, determined, confident, enthusiastic, optimistic, honest, passionate <br/><b>Weaknesses:</b> Impatient, moody, short-tempered, impulsive, aggressive <br/><b>Aries likes:</b> Comfortable clothes, taking on leadership roles, physical challenges, individual sports <br/><b>Aries dislikes:</b> Inactivity, delays, work that does not use one's talents";
+
+			}
+				else if((data>=20&&data2==4)||(data<=20&&data2==5))
+			{
+				hi.innerHTML="Hi! " + data3 + " You are Taurus";
+				image1.src="taurus.jpeg";
+				des.innerHTML="<b>TAURUS TRAITS</b> <br/><b>Strengths:</b> Reliable, patient, practical, devoted, responsible, stable <br/><b>Weaknesses:</b> Stubborn, possessive, uncompromising <br/><b>Taurus likes:</b> Gardening, cooking, music, romance, high quality clothes, working with hands <br/><b>Taurus dislikes:</b> Sudden changes, complications, insecurity of any kind, synthetic fabrics";
+
+			}
+				else if((data>=21&&data2==5)||(data<=20&&data2==6))
+			{
+				hi.innerHTML="Hi! " + data3 + " You are Gemini";
+				image1.src="gemini.jpeg";
+				des.innerHTML="<b>GEMINI TRAITS</b> <br/><b>Strengths:</b> Gentle, affectionate, curious, adaptable, ability to learn quickly and exchange ideas <br/><b>Weaknesses:</b> Nervous, inconsistent, indecisive <br/><b>Gemini likes:</b> Music, books, magazines, chats with nearly anyone, short trips around the town <br/><b>Gemini dislikes:</b> Being alone, being confined, repetition and routine";
+
+			}
+				else if((data>=21&&data2==6)||(data<=22&&data2==7))
+			{
+				hi.innerHTML="Hi! " + data3 + " You are Cancer";
+				image1.src="cancer.jpeg";
+				des.innerHTML="<b>CANCER TRAITS</b> <br/><b> Strengths:</b> Tenacious, highly imaginative, loyal, emotional, sympathetic, persuasive <br/><b>Weaknesses:</b> Moody, pessimistic, suspicious, manipulative, insecure <br/><b>Cancer likes:</b> Art, home-based hobbies, relaxing near or in water, helping loved ones, a good meal with friends <br/><b>Cancer dislikes:</b> Strangers, any criticism of Mom, revealing of personal life";
+
+				}
+				else if((data>=23&&data2==7)||(data<=22&&data2==8))
+			{
+				hi.innerHTML="Hi! " + data3 + " You are Leo";
+				image1.src="leo.jpeg";
+				des.innerHTML="<b>LEO TRAITS</b> <br/><b>Strengths:</b> Creative, passionate, generous, warm-hearted, cheerful, humorous <br/><b>Weaknesses:</b> Arrogant, stubborn, self-centered, lazy, inflexible <br/><b>Leo likes:</b> Theater, taking holidays, being admired, expensive things, bright colors, fun with friends <br/><b>Leo dislikes:</b>Being ignored, facing difficult reality, not being treated like a king or queen";
+
+			}
+				else if((data>=23&&data2==8)||(data<=22&&data2==9))
+			{
+				hi.innerHTML= "Hi! " + data3 + " You are Virgo";
+				image1.src="virgo.jpeg";
+				des.innerHTML="<b>VIRGO TRAITS</b> <br/><b>Strengths:</b> Loyal, analytical, kind, hardworking, practical <br/><b>Weaknesses:</b> Shyness, worry, overly critical of self and others, all work and no play <br/><b>Virgo likes:</b> Animals, healthy food, books, nature, cleanliness <br/><b>Virgo dislikes:</b> Rudeness, asking for help, taking center stage";
+
+			}
+				else if((data>=23&&data2==9)||(data<=22&&data2==10))
+			{
+				hi.innerHTML="Hi! " + data3 + " You are Libra";
+				image1.src="libra.jpeg";
+				des.innerHTML="<b>LIBRA TRAITS</b> <br/><b>Strengths:</b> Cooperative,diplomatic, gracious, fair-minded, social <br/><b>Weaknesses:</b> Indecisive, avoids confrontations, will carry a grudge, self-pity <br/><b>Libra likes:</b> Harmony, gentleness, sharing with others, the outdoors <br/><b>Libra dislikes:</b> Violence, injustice, loudmouths, conformity";
+
+			}
+				else if((data>=23&&data2==10)||(data<=21&&data2==11))
+			{
+				hi.innerHTML="Hi! " + data3 + " You are Scorpio" ;
+				image1.src="scorpio.jpeg";
+				des.innerHTML="<b>SCORPIO TRAITS</b> <br/><b>Strengths:</b> Resourceful, brave, passionate, stubborn, a true friend <br/><b>Weaknesses:</b> Distrusting, jealous, secretive, violent <br/><b>Scorpio likes:</b> Truth, facts, being right, longtime friends, teasing, a grand passion <br/><b>Scorpio dislikes:</b> Dishonesty, revealing secrets, passive people";
+
+			}
+				else if((data>=22&&data2==11)||(data<=21&&data2==12))
+			{
+				hi.innerHTML= "Hi! " + data3 + " You are Saggittarius";
+				image1.src="sagitarius.jpeg";
+				des.innerHTML="<b>SAGITTARIUS TRAITS</b> <br/><b>Strengths:</b> Generous, idealistic, great sense of humor <br/><b>Weaknesses:</b> Promises more than can deliver, very impatient, will say anything no matter how undiplomatic <br/><b>Sagittarius likes:</b> Freedom, travel, philosophy, being outdoors <br/><b>Sagittarius dislikes:</b> Clingy people, being constrained, off-the-wall theories, details";
+			}
+				else if((data>=20&&data2==1)||(data<=18&&data2==2))
+			{
+				hi.innerHTML="Hi! " + data3 + " You are Aquarius" ;
+				image1.src="aquarius.jpeg";
+				des.innerHTML="<b>AQUARIUS TRAITS</b> <br/><b>Strengths:</b> Progressive, original, independent, humanitarian <br/><b>Weaknesses:</b> Runs from emotional expression, temperamental, uncompromising, aloof <br/><b>Aquarius likes:</b> Fun with friends, helping others, fighting for causes, intellectual conversation, a good listener <br/><b>Aquarius dislikes:</b> Limitations, broken promises, being lonely, dull or boring situations, people who disagree with them";
+			}
+				else if((data>=19&&data2==2)||(data<=20&&data2==3))
+			{
+				hi.innerHTML="Hi! " + data3 + " You are Pisces" ;
+				image1.src="pisces.png";
+				des.innerHTML="<b>PISCES TRAITS</b> <br/><b>Strengths:</b> Compassionate, artistic, intuitive, gentle, wise, musical <br/><b>Weaknesses:</b> Fearful, overly trusting, sad, desire to escape reality, can be a victim or a martyr <br/><b>Pisces likes:</b> Being alone, sleeping, music, romance, visual media, swimming, spiritual themes <br/><b>Pisces dislikes:</b> Know-it-all, being criticized, the past coming back to haunt, cruelty of any kind";
+			}
+
+			image1.style.visibility="visible";
+
+		}
+
+	</script>
+
+  </head>
+  <body align="center">
+		<div id="container">
+			<div class="jumbotron text-center" id="head">
+
+				<h1>Zodiac Finder</h1>
+
+			</div><!--head-->
+
+				<div class="col-md-4" id="left">
+					<img src="download__1_.jpg"/>
+					<br/>
+					<img src="download__1_.png"/>
+					<br/>
+					<img src="download__2_.jpg"/>
+					<br/>
+					<img src="download__2_.png"/>
+					<br/>
+					<img src="download__3_.jpg"/>
+					<br/>
+					<img src="download__3_.png"/>
+					<br/>
+				</div><!--left-->
+				<div class="col-md-4" id="center">
+					<div id="before">
+
+					<p id="para">The Zodiac is made up of 12 different Sun Signs. Your date of birth determines which one you are. Enter your date of birth and get your Zodiac Sun Sign:</p>
+					<br/>
+					Enter your name:
+					<br/>
+					<input type="text" class="form-control" id="nam"/>
+					<div class="alert alert-danger fade in" id="unagiName" style="display:none;">
+							<a href="#" class="close alert-close" aria-label="close">&times;</a>
+							Enter a Name
+					</div>
+					<br/>
+					Enter day:
+
+					<br/>
+					<select class="form-control" id="choice">
+						<option value="0">-select-</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+
+					</select>
+					<div class="alert alert-danger fade in" id="unagiDay" style="display:none;">
+							<a href="#" class="close alert-close" aria-label="close">&times;</a>
+							Select a date
+					</div>
+					<br/>
+					Enter month:
+					<br/>
+					<select class="form-control" id="choice1">
+						<option value="0">-select-</option>
+						<option value="1">January</option>
+						<option value="2">February</option>
+						<option value="3">March</option>
+						<option value="4">April</option>
+						<option value="5">May</option>
+						<option value="6">June</option>
+						<option value="7">July</option>
+						<option value="8">August</option>
+						<option value="9">September</option>
+						<option value="10">October</option>
+						<option value="11">November</option>
+						<option value="12">December</option>
+					</select>
+					<div class="alert alert-danger fade in" id="unagiMonth" style="display:none;">
+							<a href="#" class="close alert-close" aria-label="close">&times;</a>
+							Enter a month
+					</div>
+					<br/>
+					<input type="button" value="Find" class="btn btn-warning" id="btn1" onclick="foo()"/>
+
+
+					</div><!--before-->
+					<div id="after">
+						<div class="panel panel-default" id="result">
+					<div class="panel-heading">
+						<h3 class="panel-title" id="hi"></h3>
+					</div><!--panelheading-->
+					<div class="panel1-body">
+					<div id="image">
+						<img src="" class="img-thumbnail" id="image1"/>
+						<!--<img src="" id="image1"/>-->
+					</div><!--image-->
+					<div id="des">
+
+				</div><!--des-->
+				</div><!--panelbody-->
+				</div><!--result-->
+				<input type="button" value="Find Another" class="btn btn-warning" id="btn2"/>
+					</div><!--after-->
+				</div><!--center-->
+				<div class="col-md-4" id="right">
+					<img src="download__4_.png"/>
+					<br/>
+					<img src="download__5_.png"/>
+					<br/>
+					<img src="download__6_.png"/>
+					<br/>
+					<img src="download__7_.png"/>
+					<br/>
+					<img src="download.jpg"/>
+					<br/>
+					<img src="download.png"/>
+					<br/>
+				</div><!--right-->
+
+				</div><!--container-->
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
